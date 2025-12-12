@@ -79,19 +79,26 @@ public class Camera extends GUIArtifact {
 		String dono = "Jonas";
 		String[] conhecidos = { "Roberto", "Maria", "Ana" };
 
-		// Verifica se é comando de saída (formato: "Nome saiu" ou "saiu")
-		String[] palavras = pessoa.split(" ");
+		// Verifica se é comando de saída
+		// Novo comportamento mínimo: se o campo "local" for 'sair',
+		// interpretar como saída da pessoa digitada em `pessoa`.
 		boolean isSaida = false;
 		String nomeSaida = "";
-		
-		if (palavras.length == 2 && palavras[1].equalsIgnoreCase("saiu")) {
-			// Formato: "Jonas saiu", "Milena saiu", etc
+		if (local.equalsIgnoreCase("sair")) {
 			isSaida = true;
-			nomeSaida = palavras[0];
-		} else if (pessoa.equalsIgnoreCase("sair") || pessoa.equalsIgnoreCase("saiu")) {
-			// Formato antigo: "sair" (assume que é o dono)
-			isSaida = true;
-			nomeSaida = dono;
+			nomeSaida = pessoa;
+		} else {
+			// Formato antigo: "Nome saiu" ou apenas "sair" no campo pessoa
+			String[] palavras = pessoa.split(" ");
+			if (palavras.length == 2 && palavras[1].equalsIgnoreCase("saiu")) {
+				// Formato: "Jonas saiu", "Milena saiu", etc
+				isSaida = true;
+				nomeSaida = palavras[0];
+			} else if (pessoa.equalsIgnoreCase("sair") || pessoa.equalsIgnoreCase("saiu")) {
+				// Formato antigo: "sair" (assume que é o dono)
+				isSaida = true;
+				nomeSaida = dono;
+			}
 		}
 		
 		// PESSOA SAIU

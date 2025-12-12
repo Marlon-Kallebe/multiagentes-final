@@ -39,7 +39,8 @@
  
 **Passos:**
 1. Na janela **Camera**, digite:
-   - Nome: `Jonas saiu`
+   - Nome: `Jonas`
+   - Local: `sair`
 2. Clique: **ok**
  
 **Resultado Esperado:**
@@ -71,8 +72,8 @@
 - Log: "PESSOA CADASTRADA COM SUCESSO!"
  
 **Validar Cadastro:**
-5. Digite: `sair`
-6. Digite: `Leo` novamente
+5. Defina `Local`: `sair` (mantenha `Nome` como `Leo`)
+6. Clique: **ok** (reconhecido como conhecido)
 7. Reconhecido como conhecido
 8. Porta abre, luzes acendem
 9. SEM popup
@@ -101,7 +102,7 @@
 - Log: "CENARIO 3: INTRUSO DETECTADO!"
  
 **Parar Modo Defesa:**
-5. Digite: `sair`
+5. Defina `Local`: `sair` (mantenha `Nome` com a pessoa que saiu)
 6. Loops param em 2-4 segundos
  
 ---
@@ -132,14 +133,14 @@
 1. Jonas chega
    → Tudo liga
  
-2. Jonas saiu
+2. Local: `sair` (Nome: `Jonas`)
    → Tudo desliga
  
 3. Leo detectado
    → Cadastrar
    → SEM alarme
  
-4. Leo saiu
+4. Local: `sair` (Nome: `Leo`)
    → Tudo desliga
  
 5. Leo volta
@@ -150,7 +151,7 @@
    → Rejeitar
    → Alarme dispara
  
-7. sair
+7. Local: `sair` (com Nome apropriado)
    → Alarme para
 ```
  
@@ -183,8 +184,8 @@
 - [ ] Pessoa cadastrada reconhecida depois
  
 ### Sensores:
-- [ ] Temperatura atualiza a cada 15s
-- [ ] Luminosidade atualiza a cada 15s
+- [ ] Temperatura atualiza a cada 9s
+- [ ] Luminosidade atualiza a cada 9s
 - [ ] Logs não poluem terminal
  
 ---
