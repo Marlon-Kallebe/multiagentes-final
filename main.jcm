@@ -1,0 +1,28 @@
+/*
+    JaCaMo Application File Template
+    --------------------------------
+
+    This file defines the initial state of the MAS (initial agents, environment, organisation, ....)
+
+    (see jacamo/doc/jcm.html for more information about what can be defined in this file)
+
+    JaCaMo 1.2
+*/
+
+mas main {
+
+    agent camera: camera.asl
+    agent cadastro: cadastro.asl
+    agent fechadura: fechadura.asl
+    agent janela: janela.asl
+    agent ar_condicionado: ar_condicionado.asl
+    agent lampada: lampada.asl
+    agent cortina: cortina.asl
+    agent sensor_luz: sensor_luz.asl
+    agent sensor_temperatura: sensor_temperatura.asl
+    agent alarme: alarme.asl
+
+    workspace w {
+      artifact c1: example.Counter(3) 
+    }
+}

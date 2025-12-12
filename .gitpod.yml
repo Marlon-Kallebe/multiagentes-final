@@ -1,0 +1,12 @@
+tasks:
+  - before: yes | sdk install java 17.0.6-tem && ./gradlew build
+
+vscode:
+  extensions:
+     - https://open-vsx.org/api/tabajara-krausburg/jacamo4code/1.2.1/file/tabajara-krausburg.jacamo4code-1.2.1.vsix
+     - redhat.vscode-xml
+
+image: gitpod/workspace-full-vnc
+ports:
+  - port: 6080
+    onOpen: open-preview
