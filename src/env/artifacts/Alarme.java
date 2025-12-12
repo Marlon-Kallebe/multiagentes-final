@@ -54,7 +54,7 @@ public class Alarme extends GUIArtifact {
 		String mensagem = "*** ALARME ATIVADO! *** Motivo: " + motivo;
 		historico.add(mensagem);
 		frame.adicionarAlerta(mensagem);
-		System.out.println("[ALARME] " + mensagem);
+		
 	}
  
 	@OPERATION
@@ -62,9 +62,9 @@ public class Alarme extends GUIArtifact {
 		String notificacao = "NOTIFICACAO ENVIADA: Intruso detectado - " + intruso;
 		historico.add(notificacao);
 		frame.adicionarAlerta(notificacao);
-		System.out.println("[ALARME] " + notificacao);
-		System.out.println("[ALARME] Email enviado para: proprietario@email.com");
-		System.out.println("[ALARME] SMS enviado para: +55 11 99999-9999");
+		
+		
+		
 	}
  
 	@OPERATION
@@ -74,14 +74,14 @@ public class Alarme extends GUIArtifact {
 		String mensagem = "Alarme desativado";
 		historico.add(mensagem);
 		frame.adicionarAlerta(mensagem);
-		System.out.println("[ALARME] " + mensagem);
+		
 	}
  
 	@INTERNAL_OPERATION 
 	void limpar(ActionEvent ev){
 		historico.clear();
 		frame.limparHistorico();
-		System.out.println("[ALARME] Historico limpo");
+		
 	}
  
 	@INTERNAL_OPERATION 

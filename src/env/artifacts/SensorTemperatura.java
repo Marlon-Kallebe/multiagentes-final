@@ -12,7 +12,7 @@ public class SensorTemperatura extends Artifact {
 	public void setup() {
 		defineObsProperty("temperatura_ambiente", temperaturaAtual);
 		defineObsProperty("ativo", ativo);
-		System.out.println("[SensorTemperatura] Sensor inicializado com temperatura: " + temperaturaAtual + " C");
+		
 		
 		// Inicia monitoramento periodico
 		new Thread(new TemperatureMonitor()).start();
@@ -37,7 +37,6 @@ public class SensorTemperatura extends Artifact {
 		} else {
 			getObsProperty("temperatura_ambiente").updateValue(temperaturaAtual);
 		}
-		System.out.println("[SensorTemperatura] Temperatura atual: " + temperaturaAtual + " C");
 		signal("medicao_temperatura", temperaturaAtual);
 	}
 	
@@ -46,7 +45,7 @@ public class SensorTemperatura extends Artifact {
 		if (novaTemp >= 15 && novaTemp <= 35) {
 			temperaturaAtual = novaTemp;
 			getObsProperty("temperatura_ambiente").updateValue(temperaturaAtual);
-			System.out.println("[SensorTemperatura] Temperatura ajustada para: " + temperaturaAtual + " C");
+			
 		}
 	}
 	
@@ -54,14 +53,14 @@ public class SensorTemperatura extends Artifact {
 	void ativar_sensor() {
 		ativo = true;
 		getObsProperty("ativo").updateValue(true);
-		System.out.println("[SensorTemperatura] Sensor ativado");
+		
 	}
 	
 	@OPERATION
 	void desativar_sensor() {
 		ativo = false;
 		getObsProperty("ativo").updateValue(false);
-		System.out.println("[SensorTemperatura] Sensor desativado");
+		
 	}
 	
 	// Thread para monitoramento continuo

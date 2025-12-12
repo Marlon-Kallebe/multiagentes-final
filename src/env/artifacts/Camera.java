@@ -41,7 +41,6 @@ public class Camera extends GUIArtifact {
 		linkWindowClosingEventToOp(frame, "closed");
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.pack();
-		frame.setLocationRelativeTo(null);
 		// garante visibilidade e foco da janela
 		frame.setAlwaysOnTop(true);
 		frame.setVisible(true);
@@ -73,8 +72,8 @@ public class Camera extends GUIArtifact {
 		String pessoa = camera_model.getPessoa();
 		String local  = camera_model.getLocal();
 
-		System.out.println("========================================");
-		System.out.println("[Camera.java] Detectado - Pessoa: " + pessoa + ", Local: " + local);
+		
+		
 
 		// Lista de pessoas conhecidas (nao sao intrusos)
 		String dono = "Jonas";
@@ -97,26 +96,26 @@ public class Camera extends GUIArtifact {
 		
 		// PESSOA SAIU
 		if (isSaida) {
-			System.out.println("[Camera.java] >>> ENVIANDO SINAL: pessoa_saiu(" + nomeSaida + ")");
+			
 			signal("pessoa_saiu", nomeSaida);
 		}
 		// DONO CHEGOU
 		else if (pessoa.equalsIgnoreCase(dono) && local.equalsIgnoreCase("frente")) {
-			System.out.println("[Camera.java] >>> ENVIANDO SINAL: dono_chegou(" + pessoa + ")");
+			
 			signal("dono_chegou", pessoa);
 		}
 		// OUTRO MORADOR CONHECIDO
 		else if (isConhecido(pessoa, conhecidos)) {
-			System.out.println("[Camera.java] >>> ENVIANDO SINAL: morador_chegou(" + pessoa + ")");
+			
 			signal("morador_chegou", pessoa);
 		}
 		// INTRUSO
 		else if (!pessoa.equalsIgnoreCase("ninguem")) {
-			System.out.println("[Camera.java] >>> ENVIANDO SINAL: intruso_detectado(" + pessoa + ")");
+			
 			signal("intruso_detectado", pessoa);
 		}
 
-		System.out.println("========================================");
+		
 
 		signal("movimento");
 	}
@@ -181,7 +180,7 @@ class InterfaceAC extends JFrame {
 		
 		public InterfaceAC(){
 			setTitle(" Camera ");
-		setLocation(50, 50);
+		setLocation(1200, 400);
 			setSize(300,400);
 					
 			JPanel panel = new JPanel();

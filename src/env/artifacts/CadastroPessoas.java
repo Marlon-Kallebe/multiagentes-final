@@ -90,7 +90,7 @@ public class CadastroPessoas extends GUIArtifact {
 		getObsProperty("pessoa_pendente").updateValue("");
 		frame.atualizarLista(pessoasConhecidas);
 		frame.limparPendente();
-		System.out.println("[CADASTRO] [OK] Pessoa adicionada com sucesso: " + nome);
+		
 	}
  
 	@OPERATION
@@ -99,7 +99,7 @@ public class CadastroPessoas extends GUIArtifact {
 		pessoasConhecidas.remove(nome.toLowerCase());
 		getObsProperty("total_cadastrados").updateValue(pessoasConhecidas.size());
 		frame.atualizarLista(pessoasConhecidas);
-		System.out.println("[CADASTRO] Pessoa removida: " + nome);
+		
 	}
  
 	@INTERNAL_OPERATION 
@@ -124,7 +124,7 @@ public class CadastroPessoas extends GUIArtifact {
 	void rejeitarCadastroInternal() {
 		if (!ultimaPessoaDesconhecida.isEmpty()) {
 			String nomeRejeitado = ultimaPessoaDesconhecida;
-			System.out.println("[CADASTRO] Pessoa rejeitada pelo usuario: " + nomeRejeitado);
+			
 			signal("pessoa_rejeitada", nomeRejeitado);
 			// Agora sim envia sinal de pessoa desconhecida para ativar modo defesa
 			signal("pessoa_desconhecida", nomeRejeitado);
@@ -138,7 +138,7 @@ public class CadastroPessoas extends GUIArtifact {
 	@INTERNAL_OPERATION 
 	void rejeitar_pessoa(ActionEvent ev){
 		if (!ultimaPessoaDesconhecida.isEmpty()) {
-			System.out.println("[CADASTRO] Pessoa rejeitada: " + ultimaPessoaDesconhecida);
+			
 			signal("pessoa_rejeitada", ultimaPessoaDesconhecida);
 			getObsProperty("aguardando_cadastro").updateValue(false);
 			getObsProperty("pessoa_pendente").updateValue("");

@@ -12,7 +12,7 @@ public class SensorIluminacao extends Artifact {
 	public void setup() {
 		defineObsProperty("nivel_iluminacao", nivelIluminacao);
 		defineObsProperty("ativo", ativo);
-		System.out.println("[SensorIluminacao] Sensor inicializado com nivel: " + nivelIluminacao + "%");
+		
 		
 		// Inicia monitoramento periodico
 		new Thread(new LightMonitor()).start();
@@ -37,7 +37,7 @@ public class SensorIluminacao extends Artifact {
 		} else {
 			getObsProperty("nivel_iluminacao").updateValue(nivelIluminacao);
 		}
-		System.out.println("[SensorIluminacao] Nivel de iluminacao: " + nivelIluminacao + "%");
+		
 		signal("medicao_iluminacao", nivelIluminacao);
 	}
     
@@ -47,7 +47,7 @@ public class SensorIluminacao extends Artifact {
 		if (novoNivel >= 0 && novoNivel <= 100) {
 			nivelIluminacao = novoNivel;
 			getObsProperty("nivel_iluminacao").updateValue(nivelIluminacao);
-			System.out.println("[SensorIluminacao] Nivel de iluminacao ajustado para: " + nivelIluminacao + "%");
+			
 		}
 	}
 	
@@ -55,14 +55,14 @@ public class SensorIluminacao extends Artifact {
 	void ativar_sensor() {
 		ativo = true;
 		getObsProperty("ativo").updateValue(true);
-		System.out.println("[SensorIluminacao] Sensor ativado");
+		
 	}
 	
 	@OPERATION
 	void desativar_sensor() {
 		ativo = false;
 		getObsProperty("ativo").updateValue(false);
-		System.out.println("[SensorIluminacao] Sensor desativado");
+		
 	}
 	
 	// Thread para monitoramento continuo
