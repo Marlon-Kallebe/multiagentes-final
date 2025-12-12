@@ -190,26 +190,6 @@
  
 ---
  
-## Problemas Comuns
- 
-### Janelas sobrepostas:
-- Feche e execute novamente
-- Verifique se está usando versão 2.2
- 
-### Alarme ao cadastrar:
-- Versão correta: SEM alarme ao cadastrar
-- Se alarmar: Versão antiga, atualize
- 
-### Popup não aparece:
-- Digite nome desconhecido (não Jonas, Roberto, Maria, Ana)
-- Popup é automático
- 
-### Modo defesa não para:
-- Digite: `sair` ou `Nome saiu`
-- Para em 2-4 segundos
- 
----
- 
 ## Dicas
  
 **Testar Cadastro:**
